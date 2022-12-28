@@ -182,3 +182,11 @@ export default defineConfig({
 ├── README.md                        # Документация приложения
 └── tsconfig.json                    # Параметры компилятора TypeScript
 ```
+
+### Добоавляем скрипты для старта
+
+```
+    "dev": "vite --port 3000",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+```
