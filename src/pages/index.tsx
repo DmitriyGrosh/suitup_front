@@ -1,8 +1,13 @@
 import React, { FC, ComponentType, PropsWithChildren } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from 'react-router-dom';
 
 import { Header } from '../widgets/header';
 import { Footer } from '../widgets/footer';
+import { viewerModel } from '../entities/viewer';
 
 interface IWithLayout {
   (component: ComponentType<any>): ComponentType<any>;
@@ -43,6 +48,16 @@ const withLayout: IWithLayout = (Component) => {
 };
 
 const PublicRoute: FC<IRoute> = ({ component: Component }) => {
+  return <Component />;
+};
+
+const PrivateRoute: FC<IRoute> = ({ component: Component }) => {
+  const { isAuth } = viewerModel.useAuth();
+
+  if (!isAuth) {
+    return <Navigate to="/auth" />;
+  }
+
   return <Component />;
 };
 
