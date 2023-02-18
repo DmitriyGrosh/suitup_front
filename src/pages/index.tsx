@@ -5,9 +5,9 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import { Header } from '../widgets/header';
-import { Footer } from '../widgets/footer';
-import { viewerModel } from '../entities/viewer';
+import { Header } from '@widgets/header';
+import { Footer } from '@widgets/footer';
+import { viewerModel } from '@entities/viewer';
 
 interface IWithLayout {
   (component: ComponentType<any>): ComponentType<any>;

@@ -1,5 +1,5 @@
 import { UserCredential } from './types';
-import { useLocalStorage } from '../../../shared/hooks';
+import { useLocalStorage } from '@shared/hooks';
 
 export const useAuth = () => {
   const [viewer, setViewer] = useLocalStorage<UserCredential | null>(
