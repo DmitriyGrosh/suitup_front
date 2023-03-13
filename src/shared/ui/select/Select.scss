@@ -8,7 +8,7 @@
 			width: 300px;
 			height: 42px;
 			display: inline-flex;
-			border: 1px solid $color;
+			border: 1px solid toRgba($color, 1);
 			padding-left: 10px;
 			border-radius: 5px;
 
@@ -41,6 +41,7 @@
 					padding: 10px;
 					position: relative;
 					border-top: 1px solid toRgba($color, 0.5);
+					color: var(--text-color-muted);
 
 					&:first-child {
 						border-top: none;
@@ -51,7 +52,7 @@
 					}
 
 					&__text {
-
+						color: inherit;
 					}
 
 					&__radio {
@@ -64,8 +65,8 @@
 					}
 
 					&__active {
-						background: $color;
-						color: white;
+						background: toRgba($color, 1);
+						color: var(--primary);
 
 						&:hover {
 							background: toRgba($color, 0.6);

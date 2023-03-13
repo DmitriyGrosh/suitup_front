@@ -23,7 +23,7 @@ white;
 	} @else if ($color == indigo) {
 		@return rgba(75, 0, 130, $opacity)
 	} @else if ($color == purple) {
-		@return rgba(159, 90, 253, $opacity)
+		@return rgba(100, 63, 255, $opacity)
 	} @else if ($color == pink) {
 		@return rgba(255, 192, 203, $opacity)
 	} @else {
