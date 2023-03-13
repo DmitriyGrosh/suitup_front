@@ -23,6 +23,10 @@ export default defineConfig({
         find: '@widgets',
         replacement: path.resolve(__dirname, 'src/widgets'),
       },
+      {
+        find: '@assets',
+        replacement: path.resolve(__dirname, 'src/assets'),
+      },
     ],
   },
 });
