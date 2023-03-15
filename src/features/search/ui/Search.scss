@@ -1,0 +1,17 @@
+.search {
+	padding: 0 10px;
+	height: 42px;
+	border: 1px solid transparent;
+	cursor: pointer;
+
+	&:hover {
+		border-radius: 5px;
+		background-color: var(--bg-color);
+		border-color: var(--border-color);
+	}
+
+	&__image {
+		width: 20px;
+		height: 20px;
+	}
+}
