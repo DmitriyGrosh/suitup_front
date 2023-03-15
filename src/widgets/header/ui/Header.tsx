@@ -7,6 +7,8 @@ import { Flex } from '@shared/ui/flex';
 import { Button } from '@shared/ui/button';
 import { Option, Select } from '@shared/ui/select';
 
+import { Search } from '@features/search';
+
 import './Header.scss';
 
 export const Header: FC = () => {
@@ -24,6 +26,7 @@ export const Header: FC = () => {
             </Option>
           ))}
         </Select>
+        <Search />
       </Flex>
       <Flex className="flex__gap-sm">
         <Button>Войти</Button>
