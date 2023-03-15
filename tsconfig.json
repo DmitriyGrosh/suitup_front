@@ -25,6 +25,7 @@
       "@entities/*": ["./src/entities/*"],
       "@widgets/*": ["./src/widgets/*"],
       "@assets/*": ["./src/assets/*"],
+      "@features/*": ["./src/features/*"],
     }
   },
   "include": ["src"],

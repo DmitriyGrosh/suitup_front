@@ -1,0 +1,16 @@
+.text-field {
+	position: relative;
+	width: 300px;
+	height: 42px;
+	display: inline-flex;
+	border: 1px solid;
+	border-color: var(--bg-color);
+	padding-left: 10px;
+	border-radius: 5px;
+	color: var(--text-color);
+	font-size: 16px;
+
+	&::placeholder {
+		color: var(--text-color);
+	}
+}

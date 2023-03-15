@@ -6,7 +6,7 @@
 		position: absolute;
 		width: 100%;
 		height: 35px;
-		background-color: var(--primary);
+		background-color: var(--text-color);
 		border-radius: 50px;
 		cursor: pointer;
 	}
@@ -22,6 +22,7 @@
 		height: 100%;
 		border-radius: 50px;
 		transition: 0.3s;
+		background-color: var(--secondary);
 
 		&::before {
 			content: "";
@@ -31,17 +32,17 @@
 			width: 25px;
 			height: 25px;
 			border-radius: 50%;
-			box-shadow: inset 28px -4px 0px 0px var(--secondary);
-			background-color: var(--primary);
+			box-shadow: inset 28px -4px 0px 0px var(--bg-color);
+			background-color: var(--text-color);
 			transition: 0.3s;
 		}
 
 		&__light {
-			background-color: var(--primary);
+			background-color: var(--text-color);
 
 			&::before {
 				transform: translateX(35px);
-				background-color: var(--secondary);
+				background-color: var(--primary);
 				box-shadow: none;
 			}
 		}

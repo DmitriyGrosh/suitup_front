@@ -1,7 +1,7 @@
 import React from 'react';
 import Routing from '../pages';
 
-import './init.scss';
+import './styles/index.scss';
 
 function App() {
   return <Routing />;
