@@ -9,6 +9,8 @@ import { Header } from '@widgets/header';
 import { Footer } from '@widgets/footer';
 import { viewerModel } from '@entities/viewer';
 
+import { Main } from '@pages/main';
+
 interface IWithLayout {
   (component: ComponentType<any>): ComponentType<any>;
 }
@@ -61,14 +63,14 @@ const PrivateRoute: FC<IRoute> = ({ component: Component }) => {
   return <Component />;
 };
 
-const Main: FC = () => {
-  return <div>Main</div>;
-};
-
 const router = createBrowserRouter([
   {
     path: '/',
     element: <PublicRoute component={withLayout(Main)} />,
+  },
+  {
+    path: '/me',
+    element: <PrivateRoute component={withLayout(Main)} />,
   },
 ]);
 
