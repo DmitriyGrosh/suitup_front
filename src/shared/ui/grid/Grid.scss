@@ -1,0 +1,22 @@
+.grid {
+	position: relative;
+	display: grid;
+	grid-column-gap: 8px;
+	grid-row-gap: 8px;
+
+	@media (min-width: 1248px) {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	@media (min-width: 735.6px) and (max-width: 1023.6px) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-column-gap: 0;
+		grid-row-gap: 0;
+	}
+
+	@media (max-width: 735.6px) {
+		grid-template-columns: minmax(0, 1fr);
+		grid-column-gap: 0;
+		grid-row-gap: 0;
+	}
+}

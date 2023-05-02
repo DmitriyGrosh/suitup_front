@@ -15,8 +15,8 @@ export const Header: FC = () => {
   const cities = ['Ростов-на-Дону', 'Таганрог', 'Краснодар'];
 
   return (
-    <header className="header flex flex__between-center">
-      <Flex className="flex__center-center flex__gap-md">
+    <header className="header flex flex__between-center flex__wrap">
+      <Flex className="flex__center-center flex__gap-md flex__wrap">
         <Logo />
         <span>Suit Up!</span>
         <Select value="Ростов-на-Дону" color="purple">

@@ -21,13 +21,14 @@ import './Select.scss';
 interface ISelect extends InputHTMLAttributes<HTMLInputElement> {
   value?: string | number;
   color?: BaseColors;
+  label?: string;
 }
 
 export const Select = forwardRef<HTMLInputElement, PropsWithChildren<ISelect>>(
   (props, ref) => {
-    const { children, value, color, ...rest } = props;
+    const { children, value, label, color, className, ...rest } = props;
     const [activeElement, setActiveElement] = useState<IActiveElement>({
-      label: value.toString(),
+      label: label?.toString(),
       value: value?.toString(),
     });
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -83,7 +84,7 @@ export const Select = forwardRef<HTMLInputElement, PropsWithChildren<ISelect>>(
       <div
         ref={selectRef}
         onClick={toggleOpen}
-        className={`select-color-${color}`}
+        className={cx(`select-color-${color}`, className)}
       >
         <span className="selected">
           {activeElement.label ?? 'Select your variant'}
