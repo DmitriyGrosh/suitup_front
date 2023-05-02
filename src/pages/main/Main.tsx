@@ -5,7 +5,7 @@ import { EventList } from '@features/event/ui';
 
 export const Main: FC = () => {
   return (
-    <Flex className="flex__column flex__center-start container">
+    <Flex className="flex__column flex__gap-md flex__center-start container">
       <Filter />
       <Flex className="flex__center-center full-width">
         <EventList />

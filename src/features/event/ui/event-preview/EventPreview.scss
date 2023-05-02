@@ -1,8 +1,9 @@
 .event-preview {
 	position: relative;
 	padding: 12px;
-	background: #FFFFFF;
+	background: var(--bg-color);
 	transition: 300ms;
+	border-radius: 3px;
 
 	&__poster {
 		transition: opacity 300ms ease-out;

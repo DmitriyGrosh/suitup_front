@@ -9,7 +9,7 @@ import './EventList.scss';
 
 export const EventList = () => {
   return (
-    <Grid>
+    <Grid className="event-list">
       {list.map((el) => (
         <EventPreview
           key={el.id}

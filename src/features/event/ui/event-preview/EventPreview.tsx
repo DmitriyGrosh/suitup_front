@@ -24,12 +24,12 @@ export const EventPreview: FC<IEventPreview> = ({
   address,
 }) => {
   return (
-    <Flex className="flex__column event-preview">
+    <Flex className="flex__column flex__gap-md event-preview">
       <div className="event-preview__poster">
         <img src={poster} alt="poster" />
       </div>
-      <Flex className="flex__column event-preview__info">
-        <Flex>
+      <Flex className="flex__column flex__gap-sm event-preview__info">
+        <Flex className="flex__start-center flex__gap-sm">
           <div className="event-preview__info__logo">
             <img src={organisationLogo} alt="company name" />
           </div>
