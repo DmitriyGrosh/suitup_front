@@ -10,6 +10,7 @@ import { Footer } from '@widgets/footer';
 import { viewerModel } from '@entities/viewer';
 
 import { Main } from '@pages/main';
+import { Auth } from '@pages/auth';
 
 interface IWithLayout {
   (component: ComponentType<any>): ComponentType<any>;
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
   {
     path: '/me',
     element: <PrivateRoute component={withLayout(Main)} />,
+  },
+  {
+    path: '/auth',
+    element: <PublicRoute component={Auth} />,
   },
 ]);
 
