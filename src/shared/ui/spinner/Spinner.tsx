@@ -1,5 +1,5 @@
 import React, { FC, AllHTMLAttributes } from 'react';
-import cn from 'classnames';
+import cn from "classnames";
 
 import './Spinner.scss';
 

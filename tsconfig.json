@@ -26,6 +26,8 @@
       "@widgets/*": ["./src/widgets/*"],
       "@assets/*": ["./src/assets/*"],
       "@features/*": ["./src/features/*"],
+      "@types/*": ["./src/types/*"],
+      "@enum/*": ["./src/enum/*"],
     }
   },
   "include": ["src"],

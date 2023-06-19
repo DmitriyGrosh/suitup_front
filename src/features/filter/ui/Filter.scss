@@ -1,0 +1,14 @@
+.filter {
+
+	&__select-price {
+		width: auto;
+		padding-right: 10px;
+		min-width: 80px;
+	}
+
+	&__select-theme {
+		width: auto;
+		padding-right: 10px;
+		min-width: 200px;
+	}
+}

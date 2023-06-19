@@ -17,17 +17,21 @@ import { useHandleOutside } from '@shared/hooks';
 import { IActiveElement, SelectContext } from './Select.context';
 
 import './Select.scss';
+import {Flex} from "@shared/ui/flex";
 
 interface ISelect extends InputHTMLAttributes<HTMLInputElement> {
   value?: string | number;
   color?: BaseColors;
+  label?: string;
+	errorMessage?: string;
+	title?: string;
 }
 
 export const Select = forwardRef<HTMLInputElement, PropsWithChildren<ISelect>>(
   (props, ref) => {
-    const { children, value, color, ...rest } = props;
+    const { children, value, label, color, className, errorMessage, title, ...rest } = props;
     const [activeElement, setActiveElement] = useState<IActiveElement>({
-      label: value.toString(),
+      label: label?.toString(),
       value: value?.toString(),
     });
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -80,16 +84,20 @@ export const Select = forwardRef<HTMLInputElement, PropsWithChildren<ISelect>>(
     useHandleOutside<HTMLDivElement>(selectRef, handleClose, 'mousedown');
 
     return (
-      <div
-        ref={selectRef}
-        onClick={toggleOpen}
-        className={`select-color-${color}`}
-      >
+			<Flex className="flex__column flex__gap-md">
+				{title && <span>{title}</span>}
+				<div
+					ref={selectRef}
+					onClick={toggleOpen}
+					className={cx(`select-color-${color}`, className)}
+				>
         <span className="selected">
           {activeElement.label ?? 'Select your variant'}
         </span>
-        <div className={optionsClassName}>{render()}</div>
-      </div>
+					<div className={optionsClassName}>{render()}</div>
+				</div>
+				{errorMessage && <span className="error">{errorMessage}</span>}
+			</Flex>
     );
   },
 );

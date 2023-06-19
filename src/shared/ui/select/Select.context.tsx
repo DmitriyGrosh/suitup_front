@@ -1,22 +1,20 @@
 import {
-	createContext,
-	Dispatch,
-	ForwardedRef,
-	InputHTMLAttributes,
-	SetStateAction,
-	useContext,
-	Context,
+  createContext,
+  Dispatch,
+  ForwardedRef,
+  InputHTMLAttributes,
+  SetStateAction,
 } from 'react';
 
 export interface IActiveElement {
-	value?: string | number;
-	label?: string;
+  value?: string | number;
+  label?: string;
 }
 
 export interface ISelectContext extends InputHTMLAttributes<HTMLInputElement> {
-	ref: ForwardedRef<HTMLInputElement>;
-	activeElement?: IActiveElement;
-	setActiveElement: Dispatch<SetStateAction<IActiveElement>>;
+  ref: ForwardedRef<HTMLInputElement>;
+  activeElement?: IActiveElement;
+  setActiveElement: Dispatch<SetStateAction<IActiveElement>>;
 }
 
 export const SelectContext = createContext({} as ISelectContext);

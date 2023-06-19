@@ -10,6 +10,14 @@
 	color: var(--text-color);
 	font-size: 16px;
 
+	&__error {
+		border: 1px solid var(--error);
+	}
+
+	&__error-message {
+		color: var(--error);
+	}
+
 	&::placeholder {
 		color: var(--text-color);
 	}
