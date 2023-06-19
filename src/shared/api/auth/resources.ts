@@ -53,8 +53,7 @@ export const signUpResource = async (createUserData: TRegisterUser): Promise<Ser
 };
 
 export const logoutResource = async () => {
-	console.log('==========>JSON.parse(localStorage.getItem(TOKEN.VIEWER))[TOKEN.REFRESH]', JSON.parse(localStorage.getItem(TOKEN.VIEWER))[TOKEN.ACCESS]);
-  return await axios.get(`${BaseUrl}/auth/logout`, {
+	return await axios.get(`${BaseUrl}/auth/logout`, {
 		headers: {
 			Authorization: `Bearer ${JSON.parse(localStorage.getItem(TOKEN.VIEWER))[TOKEN.ACCESS]}`
 		}
