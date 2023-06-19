@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { googleLogout } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 
 import { ThemeLayout } from '@entities/theme-layout';
@@ -14,7 +13,6 @@ import { Search } from '@features/search';
 import { viewerModel } from '@entities/viewer';
 
 import './Header.scss';
-import { testAuth } from '@shared/api/auth/resources';
 
 export const Header: FC = () => {
   const { isAuth, viewer, logout } = viewerModel.useAuth();
@@ -27,17 +25,10 @@ export const Header: FC = () => {
     }
   };
 
-  const test = async () => {
-    console.log('==========>document.cookie', document.cookie);
-    const value = await testAuth();
-    console.log('==========>value', value);
-  };
-
   return (
     <header className="header flex flex__between-center flex__wrap">
       <Flex className="flex__center-center flex__gap-md flex__wrap">
         <Logo />
-        <Button onClick={test}>get data</Button>
         <span>Suit Up!</span>
         <Select value="Ростов-на-Дону" color="purple">
           {cities.map((city) => (

@@ -1,8 +1,7 @@
-import { UserCredential } from './types';
 import { useLocalStorage } from '@shared/hooks';
 import { useNavigate } from 'react-router-dom';
-import { googleLogout } from '@react-oauth/google';
 import { logoutResource } from '@shared/api/auth/resources';
+import { UserCredential } from '@types/user-credentional';
 
 export const useAuth = () => {
   const navigate = useNavigate();
@@ -18,13 +17,9 @@ export const useAuth = () => {
   };
 
   const logout = async () => {
-    console.log('==========>1', 1);
+	  await logoutResource();
     setViewer(null);
-    console.log('==========>2', 2);
-    googleLogout();
-    console.log('==========>3', 3);
-    await logoutResource(viewer.id);
-    console.log('==========>4', 4);
+		window.location.href = '/';
   };
 
   return { isAuth, login, logout, viewer };

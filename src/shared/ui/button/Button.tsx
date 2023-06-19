@@ -1,9 +1,9 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes, FC } from 'react';
 import { cx } from '@shared/lib/cx';
 
 import './Button.scss';
 
-export const Button: FC<HTMLAttributes<HTMLButtonElement>> = ({
+export const Button: FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({
   className,
   children,
   ...props

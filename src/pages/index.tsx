@@ -11,6 +11,7 @@ import { viewerModel } from '@entities/viewer';
 
 import { Main } from '@pages/main';
 import { Auth } from '@pages/auth';
+import { RegisterPage } from "@pages/register";
 
 interface IWithLayout {
   (component: ComponentType<any>): ComponentType<any>;
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
     path: '/auth',
     element: <PublicRoute component={Auth} />,
   },
+	{
+		path: '/register',
+		element: <PublicRoute component={RegisterPage} />,
+	},
 ]);
 
 const Routing: FC = () => <RouterProvider router={router} />;
