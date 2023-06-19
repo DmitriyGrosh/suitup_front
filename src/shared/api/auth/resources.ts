@@ -34,7 +34,7 @@ export const signInResource = async (
 
 export const signUpResource = async (createUserData: TRegisterUser): Promise<ServiceResult<UserCredential>> => {
 	try {
-		const { data } = await axios.post<AxiosResponse<UserCredential>>(`${URL}/auth/signup`, {
+		const { data } = await axios.post<AxiosResponse<UserCredential>>(`${BaseUrl}/auth/signup`, {
 			...createUserData,
 		});
 
@@ -62,7 +62,7 @@ export const logoutResource = async () => {
 };
 
 export const refreshResource = async () => {
-  return await axios.get(`${URL}/auth/refresh`, {
+  return await axios.get(`${BaseUrl}/auth/refresh`, {
     headers: {
       Authorization: `Bearer ${JSON.parse(localStorage.getItem(TOKEN.VIEWER))[TOKEN.REFRESH]}`,
     },
