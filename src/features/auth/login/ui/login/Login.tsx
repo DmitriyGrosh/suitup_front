@@ -30,6 +30,8 @@ export const Login = observer(() => {
       password: data.password,
     };
 
+		console.log('==========>prepareSignInData', prepareSignInData);
+
     await loginModel.login(prepareSignInData);
   };
 

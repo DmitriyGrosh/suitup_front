@@ -25,11 +25,27 @@ export const Header: FC = () => {
     }
   };
 
+	const createEventRedirect = () => {
+		if (!isAuth) {
+			navigate('/auth');
+		} else {
+			navigate('/event/add')
+		}
+	}
+
+	const toHome = () => {
+		navigate('/');
+	}
+
+	const toAccount = () => {
+		navigate('/category');
+	}
+
   return (
     <header className="header flex flex__between-center flex__wrap">
       <Flex className="flex__center-center flex__gap-md flex__wrap">
-        <Logo />
-        <span>Suit Up!</span>
+        <Logo onClick={toHome} />
+        <span onClick={toHome}>Suit Up!</span>
         <Select value="Ростов-на-Дону" color="purple">
           {cities.map((city) => (
             <Option key={city} value={city}>
@@ -42,14 +58,15 @@ export const Header: FC = () => {
       <Flex className="flex__gap-md flex__center-center">
         {isAuth ? (
           <Popover title={<h3>{viewer.username}</h3>}>
-            <Flex className="flex__column">
+            <Flex className="flex__column flex__gap-md">
               <span onClick={logout}>Выйти</span>
+              <span onClick={toAccount}>Мой аккаунт</span>
             </Flex>
           </Popover>
         ) : (
           <Button onClick={handleRedirect}>Войти</Button>
         )}
-        <Button onClick={handleRedirect}>Создать событие</Button>
+        <Button onClick={createEventRedirect}>Создать событие</Button>
         <ThemeLayout />
       </Flex>
     </header>

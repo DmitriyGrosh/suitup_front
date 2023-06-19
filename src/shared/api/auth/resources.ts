@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { api } from '@shared/api';
+import { BaseUrl } from '@shared/api';
 import { TRegisterUser, TSignInUser } from './types';
 import { TOKEN } from '@enum/Token';
 import { SERVICE_RESULT_TYPE, ServiceResult } from '@shared/api/types';
@@ -7,14 +7,12 @@ import { SERVICE_RESULT_TYPE, ServiceResult } from '@shared/api/types';
 import { UserCredential } from '@types/user-credentional';
 import { BadResponse } from '@types/bad-response';
 
-const URL = 'http://localhost:3001';
-
 export const signInResource = async (
   user: TSignInUser,
 ): Promise<ServiceResult<UserCredential>> => {
   try {
     const { data } = await axios.post<AxiosResponse<UserCredential>>(
-      `${URL}/auth/signin`,
+      `${BaseUrl}/auth/signin`,
       {
         ...user,
       },
@@ -26,10 +24,11 @@ export const signInResource = async (
     };
   } catch (error: unknown) {
     const badResponse = error as BadResponse;
+		console.log('==========>error', error);
 
     return {
       type: SERVICE_RESULT_TYPE.FAILURE,
-      data: badResponse.response.data.message,
+      data: badResponse.response?.data?.message,
     };
   }
 };

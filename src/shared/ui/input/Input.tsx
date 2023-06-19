@@ -21,7 +21,7 @@ export const Input = forwardRef<
 		<>
 			<label htmlFor={id}>{title}</label>
 			<input id={id} ref={ref} className={cx} {...props} />
-			{errorMessage && <span className="text-field__error-message">{errorMessage}</span>}
+			{errorMessage && <span className="error">{errorMessage}</span>}
 		</>
 	)
 });

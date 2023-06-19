@@ -12,6 +12,10 @@ import { viewerModel } from '@entities/viewer';
 import { Main } from '@pages/main';
 import { Auth } from '@pages/auth';
 import { RegisterPage } from "@pages/register";
+import { CreateEvent } from "@pages/create-event";
+import { ViewEvent } from "@pages/view-event";
+import { Category } from "@pages/category";
+import { Account } from "@pages/../widgets/account";
 
 interface IWithLayout {
   (component: ComponentType<any>): ComponentType<any>;
@@ -51,6 +55,24 @@ const withLayout: IWithLayout = (Component) => {
   return WithLayout;
 };
 
+const withAdminLayout: IWithLayout = (Component) => {
+	const WithLayout: FC<PropsWithChildren> = (props) => (
+		<>
+			<Header />
+			<main>
+				<Account />
+				<Component {...props} />
+			</main>
+			<Footer />
+		</>
+	);
+
+	WithLayout.displayName = `WithPureLayout(${
+		Component?.displayName ?? Component?.name
+	})`;
+	return WithLayout;
+};
+
 const PublicRoute: FC<IRoute> = ({ component: Component }) => {
   return <Component />;
 };
@@ -81,6 +103,23 @@ const router = createBrowserRouter([
 	{
 		path: '/register',
 		element: <PublicRoute component={RegisterPage} />,
+	},
+	{
+		path: '/event',
+		children: [
+			{
+				path: 'add',
+				element: <PrivateRoute component={withAdminLayout(CreateEvent)} />
+			},
+			{
+				path: 'view/:id',
+				element: <PublicRoute component={ViewEvent} />
+			}
+		]
+	},
+	{
+		path: '/category',
+		element: <PrivateRoute component={withAdminLayout(Category)} />
 	},
 ]);
 

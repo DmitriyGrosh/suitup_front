@@ -15,6 +15,7 @@ class LoginModel {
   public async login(data: TSignInUser) {
     this.isLoading = true;
     const loginResponse = await signInResource(data);
+		console.log('==========>loginResponse', loginResponse);
 
     if (loginResponse.type === SERVICE_RESULT_TYPE.SUCCESS) {
       runInAction(() => {
