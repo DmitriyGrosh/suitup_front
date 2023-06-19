@@ -2,10 +2,10 @@ import axios, { AxiosRequestConfig } from 'axios';
 import { TOKEN } from '@enum/Token';
 import { UserCredential } from "../../types";
 
-export const BaseUrl = 'http://localhost:3001/api';
+export const BaseUrl = 'http://194.67.110.39/api';
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3001/api',
+  baseURL: 'http://194.67.110.39/api',
   // headers: {
   //   Authorization: `Bearer ${JSON.parse(localStorage.getItem(TOKEN.VIEWER))[TOKEN.ACCESS]}`,
   // },
