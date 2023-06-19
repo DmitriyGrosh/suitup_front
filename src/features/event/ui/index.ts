@@ -1,1 +1,1 @@
-export { EventList } from './event-list';
+export { EventList } from '../event-list/ui';

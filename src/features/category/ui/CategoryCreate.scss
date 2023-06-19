@@ -1,0 +1,9 @@
+.category {
+	padding: 10px;
+	border: 1px solid var(--bg-color);
+	border-radius: 5px;
+
+	&__text {
+		min-width: max-content;
+	}
+}

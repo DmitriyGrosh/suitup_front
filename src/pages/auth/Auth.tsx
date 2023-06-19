@@ -1,5 +1,5 @@
 import React from 'react';
-import { Login } from '@features/auth/ui';
+import { Login } from '@features/auth/login/ui';
 import { Flex } from '@shared/ui/flex';
 import { Logo } from '@shared/ui/logo';
 
