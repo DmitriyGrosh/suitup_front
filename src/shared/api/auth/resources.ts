@@ -3,9 +3,8 @@ import { BaseUrl } from '@shared/api';
 import { TRegisterUser, TSignInUser } from './types';
 import { TOKEN } from '@enum/Token';
 import { SERVICE_RESULT_TYPE, ServiceResult } from '@shared/api/types';
+import {BadResponse, UserCredential} from "../../../types";
 
-import { UserCredential } from '@types/user-credentional';
-import { BadResponse } from '@types/bad-response';
 
 export const signInResource = async (
   user: TSignInUser,

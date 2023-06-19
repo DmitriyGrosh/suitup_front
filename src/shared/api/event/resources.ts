@@ -1,8 +1,8 @@
+import axios from "axios";
 import {SERVICE_RESULT_TYPE, ServiceResult} from "@shared/api/types";
 import {api, BaseUrl} from "@shared/api";
 import {CreateEventBody, IEvent} from "./types";
-import {BadResponse} from "@types/bad-response";
-import axios from "axios";
+import { BadResponse } from "../../../types";
 
 export const createEvent = async (body: CreateEventBody): Promise<ServiceResult<IEvent>> => {
 	try {
@@ -22,13 +22,13 @@ export const createEvent = async (body: CreateEventBody): Promise<ServiceResult<
 	}
 }
 
-export const getEventById = async (): Promise<ServiceResult<any>> => {
-	try {
-
-	} catch (error: unknown) {
-
-	}
-};
+// export const getEventById = async (): Promise<ServiceResult<any>> => {
+// 	try {
+//
+// 	} catch (error: unknown) {
+//
+// 	}
+// };
 
 export const getEvents = async (): Promise<ServiceResult<IEvent[]>> => {
 	try {

@@ -1,3 +1,4 @@
+import React from "react";
 import {EventAdd} from "@features/event/event-add/ui";
 import {Flex} from "@shared/ui/flex";
 

@@ -1,8 +1,8 @@
-import {BadResponse} from "@types/bad-response";
 import {api} from "@shared/api";
 import {SERVICE_RESULT_TYPE, ServiceResult} from "@shared/api/types";
 
 import {ICategory} from "./types";
+import {BadResponse} from "../../../types";
 
 export const getCategories = async (): Promise<ServiceResult<ICategory[]>> => {
 	try {

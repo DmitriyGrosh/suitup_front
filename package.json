@@ -10,7 +10,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "dev": "vite --port 3000",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {

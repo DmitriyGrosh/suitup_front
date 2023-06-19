@@ -1,6 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { TOKEN } from '@enum/Token';
-import { UserCredential } from "@types/user-credentional";
+import { UserCredential } from "../../types";
 
 export const BaseUrl = 'http://localhost:3001';
 

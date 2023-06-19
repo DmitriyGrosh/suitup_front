@@ -35,10 +35,6 @@ export default defineConfig({
 		    find: '@enum',
 		    replacement: path.resolve(__dirname, 'src/enum'),
 	    },
-	    {
-		    find: '@types',
-		    replacement: path.resolve(__dirname, 'src/types'),
-	    },
     ],
   },
 });

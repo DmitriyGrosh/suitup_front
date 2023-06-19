@@ -1,7 +1,8 @@
 import { useLocalStorage } from '@shared/hooks';
 import { useNavigate } from 'react-router-dom';
 import { logoutResource } from '@shared/api/auth/resources';
-import { UserCredential } from '@types/user-credentional';
+
+import { UserCredential } from "../../../types";
 
 export const useAuth = () => {
   const navigate = useNavigate();

@@ -1,7 +1,8 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import { signInResource, TSignInUser } from '@shared/api/auth';
-import { UserCredential } from '@types/user-credentional';
 import { SERVICE_RESULT_TYPE } from '@shared/api/types';
+
+import { UserCredential } from "../../../../types";
 
 class LoginModel {
   public isLoading = false;
