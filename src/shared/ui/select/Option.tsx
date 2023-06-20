@@ -15,14 +15,14 @@ interface IOption {
 export const Option: FC<PropsWithChildren<IOption>> = ({ children, value }) => {
   const { ref, activeElement, setActiveElement, ...rest } =
     useContext<ISelectContext>(SelectContext);
-  const isActive = activeElement?.value === value.toString();
+  const isActive = activeElement?.value === value?.toString();
   const label = Children.toArray(children)[0];
   const classNames = cx('option', 'option__active', !!isActive);
 
   const handleChangeActiveElement = () => {
     setActiveElement({
       label: label as string,
-      value: value.toString(),
+      value: value === null ? null : value?.toString(),
     });
   };
 

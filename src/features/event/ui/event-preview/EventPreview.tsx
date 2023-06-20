@@ -23,6 +23,9 @@ export const EventPreview: FC<IEventPreview> = ({
   poster,
   address,
 }) => {
+	const start = new Date(startDate);
+	const end = new Date(endDate);
+
   return (
     <Flex className="flex__column flex__gap-md event-preview">
       <div className="event-preview__poster">
@@ -38,7 +41,7 @@ export const EventPreview: FC<IEventPreview> = ({
         <div className="event-preview__info__title">{title}</div>
         <div className="event-preview__info__city">{address}</div>
         <div className="event-preview__info__date">
-          {startDate}-{endDate}
+          {start.toLocaleString()}-{end.toLocaleString()}
         </div>
       </Flex>
     </Flex>
